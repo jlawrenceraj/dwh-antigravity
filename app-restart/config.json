@@ -1,0 +1,13 @@
+{
+    "app_name": "BusinessObjects",
+    "timeout_seconds": 60,
+    "log_file": "bobj_manager.log",
+    "stop_order": [
+        "BOBJ_Tomcat",
+        "BOBJ_SIA"
+    ],
+    "start_order": [
+        "BOBJ_SIA",
+        "BOBJ_Tomcat"
+    ]
+}

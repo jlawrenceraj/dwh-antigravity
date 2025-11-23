@@ -1,0 +1,8 @@
+{
+    "windows_host": "192.168.1.100",
+    "username": "admin_user",
+    "key_filename": "/path/to/private/key",
+    "password": "",
+    "remote_script_path": "C:\\Lawrence\\Workspace\\Antigravity\\app-restart\\main.py",
+    "python_command": "python"
+}
