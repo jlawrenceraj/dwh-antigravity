@@ -1,11 +1,14 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, abort
 import networkx as nx
+import os
 
 app = Flask(__name__)
 
 def parse_data(file_path):
     """Parses 'A --> B' format from a file into a NetworkX DiGraph."""
     G = nx.DiGraph()
+    if not os.path.exists(file_path):
+        return None
     with open(file_path, 'r') as f:
         lines = f.readlines()
     for line in lines:
@@ -23,15 +26,28 @@ def build_hierarchy(G, node):
         return {"name": node}
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def index_redirect():
+    # Redirect to default app or show a landing page
+    return render_template('index.html', app_name='default')
 
-@app.route('/api/data')
-def get_data():
-    G = parse_data('jobs.txt')
+@app.route('/<app_name>')
+def index(app_name):
+    return render_template('index.html', app_name=app_name)
+
+@app.route('/api/data/<app_name>')
+def get_data(app_name):
+    file_path = os.path.join('data', app_name, 'jobs.txt')
+    G = parse_data(file_path)
+    
+    if G is None:
+        return jsonify({"error": "Application not found"}), 404
+
     # Find root nodes (nodes with in-degree 0)
     roots = [n for n, d in G.in_degree() if d == 0]
     
+    if not roots:
+        return jsonify({"name": "No Data", "children": []})
+
     # Assuming single root for simplicity based on example, but handling multiple just in case
     if len(roots) == 1:
         tree_data = build_hierarchy(G, roots[0])

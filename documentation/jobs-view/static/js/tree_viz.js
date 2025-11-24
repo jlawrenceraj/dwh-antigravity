@@ -37,7 +37,7 @@ let i = 0,
 const treeMap = d3.tree().nodeSize([220, 120]);
 
 // Fetch data
-fetch('/api/data')
+fetch(`/api/data/${appName}`)
     .then(response => response.json())
     .then(data => {
         root = d3.hierarchy(data, function (d) { return d.children; });

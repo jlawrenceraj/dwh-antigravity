@@ -1,7 +1,0 @@
-Rosa Wellington --> Jon Wellington
-Jon Wellington --> Mary Dijkstra
-Mary Dijkstra --> Sam Francis Dijkstra
-Jon Wellington --> Frank Wellington
-Frank Wellington --> Stephen Wellington
-Frank Wellington --> Trent Wellington
-
