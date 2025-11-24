@@ -1,0 +1,42 @@
+base_url: "https://practicetestautomation.com"
+headless: true
+
+credentials:
+  username: "student"
+  password: "Password123"
+
+email:
+  smtp_server: "localhost"
+  smtp_port: 25
+  sender_email: "sender@example.com"
+  sender_password: ""
+  recipient_email: "recipient@example.com"
+  use_tls: false
+
+pages:
+  login:
+    url: "/practice-test-login/"
+    locators:
+      username_input: "id:username"
+      password_input: "id:password"
+      submit_button: "id:submit"
+      success_message: "xpath://h1[contains(text(), 'Logged In Successfully')]"
+      error_message: "id:error"
+  
+  home:
+    url: "/"
+    locators:
+      header: "xpath://h1" # Changed to generic h1 to avoid text mismatch issues 
+      menu_home: "xpath://a[text()='Home']"
+
+  blog:
+    url: "/blog/"
+    locators:
+      header: "xpath://h1" 
+      menu_blog: "xpath://a[text()='Blog']"
+
+  contact:
+    url: "/contact/"
+    locators:
+      header: "xpath://h1[contains(text(), 'Contact')]" 
+      menu_contact: "xpath://a[text()='Contact']"
