@@ -1,0 +1,12 @@
+system:
+  input_dir: "data/input"
+  processed_dir: "data/processed"
+  error_dir: "data/error"
+  file_config_dir: "config/files"
+  email:
+    smtp_server: "smtp.example.com"
+    smtp_port: 587
+    sender: "etl_process@example.com"
+    recipients: ["admin@example.com"]
+  database:
+    connection_string: "sqlite:///dwh.db" # Placeholder

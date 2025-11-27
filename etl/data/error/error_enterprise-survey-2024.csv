@@ -1,0 +1,5 @@
+Year,Industry_code_NZSIOC,Variable_code,Value,errors
+2023,99999,H01,2000,"Duplicate record found for unique constraint ['Year', 'Industry_code_NZSIOC', 'Variable_code']: ('2023', '99999', 'H01')"
+2023,12345678901,H04,500,"Length exceeded for column Industry_code_NZSIOC: max 10, got 11"
+2023,,H05,300,Missing mandatory column: Industry_code_NZSIOC
+2023,88888,H06,text_value,"Invalid type for column Value: expected float, got text_value"

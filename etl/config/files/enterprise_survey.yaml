@@ -1,0 +1,18 @@
+filename_pattern: "enterprise-survey-*.csv"
+file_type: "csv"
+delimiter: ","
+columns:
+  - name: "Year"
+    type: "int"
+    mandatory: true
+  - name: "Industry_code_NZSIOC"
+    type: "string"
+    length: 10
+    mandatory: true
+  - name: "Variable_code"
+    type: "string"
+    mandatory: true
+  - name: "Value"
+    type: "float"
+unique_constraints:
+  - ["Year", "Industry_code_NZSIOC", "Variable_code"]

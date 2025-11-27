@@ -1,0 +1,14 @@
+filename_pattern: "employees-*.txt"
+file_type: "fixed_width"
+columns:
+  - name: "EmpID"
+    start: 0
+    length: 5
+    type: "int"
+    mandatory: true
+  - name: "Name"
+    start: 5
+    length: 20
+    type: "string"
+unique_constraints:
+  - ["EmpID"]
