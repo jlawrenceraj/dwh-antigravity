@@ -3,10 +3,28 @@ system:
   processed_dir: "data/processed"
   error_dir: "data/error"
   file_config_dir: "config/files"
+  
+  # Feature Flags
+  features:
+    email_enabled: false
+    database_insert_enabled: false
+  
+  # Email Configuration
   email:
     smtp_server: "smtp.example.com"
     smtp_port: 587
     sender: "etl_process@example.com"
     recipients: ["admin@example.com"]
+  
+  # Database Configuration
   database:
-    connection_string: "sqlite:///dwh.db" # Placeholder
+    # PostgreSQL connection string format:
+    # postgresql://username:password@host:port/database
+    connection_string: "postgresql://etl_user:etl_password@localhost:5432/dwh"
+    # Alternative for PostgreSQL with separate parameters:
+    # host: "localhost"
+    # port: 5432
+    # database: "dwh"
+    # username: "etl_user"
+    # password: "etl_password"
+

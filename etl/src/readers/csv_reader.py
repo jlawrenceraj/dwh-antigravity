@@ -7,7 +7,14 @@ class CSVReader(BaseReader):
         super().__init__(file_path, config)
         self.delimiter = config.get('delimiter', ',')
         self.file = open(self.file_path, mode='r', encoding='utf-8', newline='')
-        self.reader = csv.DictReader(self.file, delimiter=self.delimiter)
+        # QUOTE_NONE: Don't consider double quotes - treat them as regular characters
+        # This prevents errors from missing or unmatched quotes
+        self.reader = csv.DictReader(
+            self.file, 
+            delimiter=self.delimiter,
+            quoting=csv.QUOTE_NONE,
+            escapechar=None
+        )
 
     def __iter__(self) -> Iterator[Dict[str, Any]]:
         for row in self.reader:
