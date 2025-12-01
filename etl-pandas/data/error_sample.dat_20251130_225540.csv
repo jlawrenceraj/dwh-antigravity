@@ -1,0 +1,4 @@
+id,name,dept,error_message
+00001,John Doe,IT,Duplicate record based on keys: ['id']; 
+00001,Duplicate ID,Sales,Duplicate record based on keys: ['id']; 
+,MissingID,Marketing,Missing mandatory field: id; 

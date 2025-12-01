@@ -1,0 +1,6 @@
+id,name,email,department,error_message
+1,John Doe,john@example.com,IT,"Duplicate record based on keys: ['id', 'email']; "
+1,John Doe,john@example.com,IT,"Duplicate record based on keys: ['id', 'email']; "
+4,,missing@example.com,Finance,Missing mandatory field: name; 
+5,TooLongNameForTheValidationCheckWhichShouldFailIdeally,long@example.com,Marketing,Length exceeds 50: name; 
+X,InvalidID,invalid@example.com,Sales,Invalid integer format: id; 

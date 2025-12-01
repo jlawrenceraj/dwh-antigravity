@@ -1,0 +1,21 @@
+file_type: dat
+target_table: "employee_data_fixed"
+notification_email: "admin@example.com"
+
+columns:
+  - name: "id"
+    type: "integer"
+    mandatory: true
+    unique: true
+    position: [0, 5] # Start 0, End 5 (exclusive in pandas usually? No, pandas read_fwf colspecs is (start, end) inclusive/exclusive depending on implementation, usually [start, end) )
+    # Pandas read_fwf colspecs: list of tuples (int, int) giving the extents of the fixed-width fields of each line as half-open intervals (i.e.,  [from, to[ ).
+  
+  - name: "name"
+    type: "string"
+    length: 20
+    mandatory: true
+    position: [5, 25]
+  
+  - name: "dept"
+    type: "string"
+    position: [25, 35]

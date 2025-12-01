@@ -1,0 +1,22 @@
+file_type: csv
+target_table: "employee_data"
+notification_email: "admin@example.com"
+
+columns:
+  - name: "id"
+    type: "integer"
+    mandatory: true
+    unique: true
+  
+  - name: "name"
+    type: "string"
+    length: 50
+    mandatory: true
+  
+  - name: "email"
+    type: "string"
+    mandatory: true
+    unique: true
+
+  - name: "department"
+    type: "string"

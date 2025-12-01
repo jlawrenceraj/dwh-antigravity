@@ -1,0 +1,21 @@
+database:
+  connection_string: "sqlite:///etl_database.db" 
+  # Oracle Example: oracle+oracledb://user:password@host:port/service_name
+  oracle_db_config:
+    host: "your_oracle_host"
+    port: 1521
+    service_name: "ORCLPDB1"
+    user: "your_oracle_user"
+    password_encrypted_ref: "VAULT_KEY_OR_ENV_VAR_NAME" # Reference to an encrypted password in a vault or environment variable
+    encoding: "UTF-8"
+    nencoding: "UTF-8"
+
+email:
+  smtp_server: "smtp.example.com"
+  smtp_port: 587
+  sender_email: "etl_process@example.com"
+  password: "your_password"
+
+features:
+  enable_db_load: true
+  enable_email: true
